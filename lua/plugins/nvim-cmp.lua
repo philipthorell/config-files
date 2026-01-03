@@ -1,6 +1,21 @@
 return {
 	{
 		"hrsh7th/cmp-nvim-lsp",
+		event = { "BufReadPre", "BufNewFile" },
+		dependencies = {
+			{ "antosha417/nvim-lsp-file-operations", config = true }, -- If a file is renamed, change the imports of that file to the new name
+			{ "folke/lazydev.nvim", opts = {} },
+		},
+		config = function()
+			local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
+			-- Enable autocompletion for every lsp
+			local capabilities = cmp_nvim_lsp.default_capabilities()
+
+			vim.lsp.config("*", {
+				capabilities = capabilities,
+			})
+		end,
 	},
 	{
 		"L3MON4D3/LuaSnip",
