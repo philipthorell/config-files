@@ -20,12 +20,19 @@ return {
 		},
 		opts = {
 			ensure_installed = {
+        -- LSPs
 				"cssls",
 				"html",
 				"jsonls",
 				"lua_ls",
 				"pyright",
 				"ts_ls",
+        "tailwindcss",
+        -- Linters & Formatters
+        "eslint_d",
+        "prettier",
+        "ruff",
+        "stylua",
 			},
 			automatic_installation = true,
 		},
