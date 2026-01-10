@@ -3,7 +3,15 @@ return {
 	config = function()
 		require("lualine").setup({
 			options = {
-				theme = "dracula",
+				theme = "auto",
+			},
+			sections = {
+				lualine_y = {
+					{
+						"diagnostics",
+						sources = { "nvim_workspace_diagnostic" },
+					},
+				},
 			},
 		})
 	end,
