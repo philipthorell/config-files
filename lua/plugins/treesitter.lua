@@ -1,16 +1,16 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	lazy = false,
+	branch = "master",
 	build = ":TSUpdate",
 	config = function()
-		local configs = require("nvim-treesitter.config")
+		local configs = require("nvim-treesitter.configs")
 		configs.setup({
 			ensure_installed = {
 				"lua",
 				"javascript",
 				"html",
 				"python",
-				"jsx",
 				"tsx",
 				"markdown",
 				"json",
@@ -18,9 +18,12 @@ return {
 				"yaml",
 				"toml",
 			},
-			highlight = { enabled = true },
+			highlight = { enable = true },
 			indent = { enable = true },
 			auto_install = true,
+			sync_install = false,
+			ignore_install = {},
+			modules = {},
 		})
 	end,
 }
