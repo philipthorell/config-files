@@ -1,0 +1,95 @@
+/* --- CATPPUCCIN BLUE PALETTE --- */
+@define-color	sky        #89dceb;
+@define-color	blue       #89b4fa;
+@define-color	text       #cdd6f4;
+@define-color	subtext1   #bac2de;
+@define-color	subtext0   #a6adc8;
+@define-color	surface2   #585b70;
+@define-color	surface1   #45475a;
+@define-color	surface0   #313244;
+@define-color	base       #1e1e2e;
+@define-color	mantle     #181825;
+
+/* --- GLOBAL STYLES --- */
+* {
+  font-family: 'CaskaydiaCove Nerd Font', monospace;
+  font-size: 18px;
+}
+
+/* --- WINDOW --- */
+window {
+  margin: 0px;
+  padding: 10px;
+  background-color: @base; 
+  border-radius: 12px;
+  /* Hyprland Default Border: solid Blue for stability */
+  border: 3px solid @blue; 
+}
+
+/* --- BOXES --- */
+#inner-box {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  background-color: @base;
+}
+
+#outer-box {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  background-color: @base;
+}
+
+#scroll {
+  margin: 0px;
+  padding: 10px;
+  border: none;
+}
+
+/* --- INPUT --- */
+#input {
+  margin: 5px 20px;
+  padding: 12px;
+  border: 2px solid @surface1;
+  border-radius: 8px;
+  color: @text;
+  background-color: @mantle;
+}
+
+#input image {
+    border: none;
+    color: @sky;
+}
+
+#input * {
+  outline: none !important;
+}
+
+/* --- ENTRIES --- */
+#text {
+  margin: 5px;
+  border: none;
+  color: @text;
+}
+
+#entry {
+  background-color: @base;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+/* --- SELECTION --- */
+#entry:selected {
+  background-color: @surface0;
+  border: 2px solid @sky; /* Highlight border on selection */
+}
+
+#entry:selected #text {
+  color: @blue;
+  font-weight: bold;
+}
+
+#entry:drop(active) {
+  background-color: @blue !important;
+}
