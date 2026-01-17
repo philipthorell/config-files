@@ -1,5 +1,0 @@
-com.darkyen.darkyenustimetracker
-com.jsonjuri.phpSyntaxColorHighlighter
-com.jetbrains.space
-org.shiyi.MarkdownHTMLSyntax
-com.wakatime.intellij.plugin

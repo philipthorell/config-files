@@ -1,8 +1,0 @@
-<application>
-  <component name="ExportableFileTemplateSettings">
-    <default_templates>
-      <template name="docker-compose.yml" file-name="docker-compose" reformat="true" live-template-enabled="false" />
-      <template name="README.md" file-name="README" reformat="true" live-template-enabled="false" />
-    </default_templates>
-  </component>
-</application>

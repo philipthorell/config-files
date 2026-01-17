@@ -1,9 +1,0 @@
-version: "3.8"
-
-services:
-    ${CONTAINER_NAME}:
-        image: ${CONTAINER_NAME}:latest
-        build: .
-        restart: always
-        env_file:
-            - .env
