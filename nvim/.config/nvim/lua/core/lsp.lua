@@ -29,16 +29,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
 		keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
-
-		-- Create an autocommand to format the buffer before saving
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			buffer = ev.buf,
-			callback = function()
-				vim.lsp.buf.format({ async = false }) -- async must be false for save to wait
-			end,
-		})
 	end,
 })
+
+keymap.set({ "n", "v" }, "<leader>gf", function()
+	require("conform").format({
+		lsp_fallback = true,
+		async = false,
+		timeout_ms = 500,
+	})
+end, { desc = "Format file or range (Conform)" })
 
 -- vim.lsp.inlay_hint.enable(true)
 
