@@ -120,6 +120,8 @@ alias proj="cd ~/Projects"
 # MAY BE NEEDED IF GPG SIGNING IN GIT FAILS
 #export GPG_TTY=$(tty)
 
+export HIP_VISIBLE_DEVICES=0
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
