@@ -1,42 +1,42 @@
 {
-  "layer": "top",
-  "position": "top",
-  "mod": "dock",
-  "exclusive": true,
-  "passthrough": false,
-  "gtk-layer-shell": true,
-  "include": [
-    "./modules/wofi.jsonc",
-    "./modules/backlight.jsonc",
-    "./modules/pacman.jsonc",
-    "./modules/vpn.jsonc",
-    "./modules/spotify.jsonc",
-    "./modules/workspaces.jsonc",
-    "./modules/connections.jsonc",
-    "./modules/metrics.jsonc",
-    "./modules/audio.jsonc",
-    "./modules/battery.jsonc",
-    "./modules/clock.jsonc",
-    "./modules/system.jsonc",
-    "./modules/privacy.jsonc"
-  ],
-  "modules-left": [
-    "custom/wofi",
-    "backlight",
-    "custom/pacman",
-    "custom/vpn",
-    "group/spotify-group"
-  ],
-  "modules-center": [
-    "privacy",
-    "hyprland/workspaces"
-  ],
-  "modules-right": [
-    "group/connections-group",
-    "group/metrics",
-    "group/audio-group",
-    "battery",
-    "clock",
-    "group/system-group"
-  ]
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "include": [
+        "./modules/wofi.jsonc",
+        "./modules/backlight.jsonc",
+        "./modules/pacman.jsonc",
+        "./modules/vpn.jsonc",
+        "./modules/spotify.jsonc",
+        "./modules/workspaces.jsonc",
+        "./modules/connections.jsonc",
+        "./modules/metrics.jsonc",
+        "./modules/audio.jsonc",
+        "./modules/battery.jsonc",
+        "./modules/clock.jsonc",
+        "./modules/system.jsonc",
+        "./modules/privacy.jsonc"
+    ],
+    "modules-left": [
+        "custom/wofi",
+        "backlight",
+        "custom/pacman",
+        "custom/vpn",
+        "group/spotify-group"
+    ],
+    "modules-center": [
+        "privacy",
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "group/connections-group",
+        "group/metrics",
+        "group/audio-group",
+        "battery",
+        "clock",
+        "group/system-group"
+    ]
 }
