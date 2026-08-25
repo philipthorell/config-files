@@ -15,6 +15,17 @@ return {
 				typescript = { "prettier" },
 				javascriptreact = { "prettier" },
 				typescriptreact = { "prettier" },
+
+				-- JSON: Format with prettier
+				json = { "prettier" },
+				jsonc = { "prettier" },
+			},
+
+			-- Override formatter arguments
+			formatters = {
+				prettier = {
+					prepend_args = { "--print-width", "120" },
+				},
 			},
 
 			-- Optional: Setup format on save
