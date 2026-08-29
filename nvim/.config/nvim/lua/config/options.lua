@@ -32,6 +32,8 @@ vim.opt.colorcolumn = "0"
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 
+vim.opt.fillchars = { eob = " " }
+
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	callback = function()
