@@ -42,7 +42,17 @@ end)
 hl.env("XCURSOR_SIZE", "24")
 hl.env("XCURSOR_THEME", "aosp-cursors")
 hl.env("HYPRSHOT_DIR", "/home/philip/Pictures/screenshots")
-hl.env("LIBVA_DRIVER_NAME", "nvidia")
+
+local function dir_exists(path)
+	-- io.open won't work on dirs, so we use a different trick
+	local ok, _, code = os.rename(path, path)
+	return ok or code == 13 -- code 13 = permission denied (exists but can't rename)
+end
+
+local laptop_dir = os.getenv("HOME") .. "/.config/hypr/modules/laptop"
+if dir_exists(laptop_dir) then
+	dofile(os.getenv("HOME") .. "/.config/hypr/modules/laptop/envs.lua")
+end
 
 -----------------------
 ---- LOOK AND FEEL ----
