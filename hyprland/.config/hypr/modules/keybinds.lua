@@ -1,9 +1,21 @@
+local utils = require("modules.utils")
+
 local terminal = "kitty"
 local fileManager = "thunar"
 local menu = "wofi --show drun"
 
 local mod = "SUPER"
 local modShift = "SUPER + SHIFT"
+
+if utils.hostname == "sun" then
+    ;
+elseif utils.hostname == "mars" then
+    local toggle_touchpad = require("modules.laptop.keybinds")
+
+    hl.bind(modShift .. " + F23", function()
+        toggle_touchpad()
+    end)
+end
 
 -- Applications
 hl.bind(mod .. " + RETURN", hl.dsp.exec_cmd(terminal))
@@ -33,29 +45,6 @@ hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region --freeze"))
 
 -- Lock screen
 hl.bind(mod .. " + HOME", hl.dsp.exec_cmd("hyprlock"))
-
--- Toggle touchpad (Copilot key on laptop)
-local touchpad = "pixa3848:00-093a:3848-touchpad"
-local touchpad_enabled = true
-
-local function toggle_touchpad()
-	touchpad_enabled = not touchpad_enabled
-	hl.config({
-		device = {
-			name = touchpad,
-			enabled = touchpad_enabled,
-		},
-	})
-	if touchpad_enabled then
-		hl.exec_cmd("notify-send -u low -t 2000 'Touchpad' 'Enabled 󰟜'")
-	else
-		hl.exec_cmd("notify-send -u low -t 2000 'Touchpad' 'Disabled 󰟙'")
-	end
-end
-
-hl.bind(modShift .. " + F23", function()
-	toggle_touchpad()
-end)
 
 -- Focus movement (vim-style)
 hl.bind(mod .. " + H", hl.dsp.focus({ direction = "left" }))
