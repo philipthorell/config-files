@@ -26,7 +26,9 @@ vim.opt.completeopt = "menuone,noselect,fuzzy,nosort" -- is for mini completions
 vim.opt.shortmess:append("c") -- also for mini completions
 --vim.opt.guicursor = ""  -- Let's the terminal control the look of the cursor
 vim.opt.scrolloff = 8
+
 vim.opt.cursorline = true
+vim.api.nvim_set_hl(0, "CursorLine", { fg = "none", bg = "#2a2b3d", blend = 0 })
 
 vim.opt.colorcolumn = "0"
 vim.opt.signcolumn = "yes"
